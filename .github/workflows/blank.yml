@@ -21,6 +21,14 @@ jobs:
         id-token: write  # Note: this permission is explicitly required for Vault auth
         contents: read
 
+      steps:
+      - name: Import Secrets
+        uses: hashicorp/vault-action@v2.3.1
+        with:
+          url: https://vault-cluster.vault.11eb13c6-5c7e-9b94-9eb3-0242ac110018.aws.hashicorp.cloud:8200
+          role: github_role
+          method: jwt
+          jwtGithubAudience: sigstore # set the GitHub token's aud claim
 
   # This workflow contains a single job called "build"
   build:
