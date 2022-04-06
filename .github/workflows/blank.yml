@@ -28,7 +28,10 @@ jobs:
           url: https://vault-cluster.vault.11eb13c6-5c7e-9b94-9eb3-0242ac110018.aws.hashicorp.cloud:8200
           role: github_role
           method: jwt
-          jwtGithubAudience: sigstore # set the GitHub token's aud claim
+          #jwtGithubAudience: sigstore # set the GitHub token's aud claim
+          secrets: |
+                    secret/data/ci/aws accessKey | AWS_ACCESS_KEY_ID ;
+                    secret/data/ci/aws secretKey | AWS_SECRET_ACCESS_KEY ;
 
   # This workflow contains a single job called "build"
   build:
