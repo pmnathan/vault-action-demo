@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   some_job:
-      runs-on: self-hosted # Note: self-hosted runners are required for Vault access
+      runs-on: ubuntu-latest
       permissions:
         id-token: write  # Note: this permission is explicitly required for Vault auth
         contents: read
