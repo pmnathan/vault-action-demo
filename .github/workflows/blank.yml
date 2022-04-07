@@ -26,12 +26,12 @@ jobs:
         uses: hashicorp/vault-action@v2.3.1
         with:
           url: https://vault-cluster.vault.11eb13c6-5c7e-9b94-9eb3-0242ac110018.aws.hashicorp.cloud:8200
-          role: github-actions-job-test
+          role: github-actions-job
           method: jwt
           #jwtGithubAudience: sigstore # set the GitHub token's aud claim
           secrets: |
-                    secret/data/ci/aws accessKey | AWS_ACCESS_KEY_ID ;
-                    secret/data/ci/aws secretKey | AWS_SECRET_ACCESS_KEY ;
+                    kv/data/vault-action-demo     accessKey   | AWS_ACCESS_KEY_ID ;
+                    kv/data/ci/vault-action-demo  secretKey   | AWS_SECRET_ACCESS_KEY ;
 
   # This workflow contains a single job called "build"
   build:
