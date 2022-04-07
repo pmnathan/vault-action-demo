@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: VAULT_CI_DEMO
 
 # Controls when the workflow will run
 on:
@@ -15,7 +15,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  some_job:
+  retrieve_vault_secrets:
       runs-on: ubuntu-latest
       permissions:
         id-token: write  # Note: this permission is explicitly required for Vault auth
@@ -45,9 +45,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      
-      - name: Import Secrets
-        uses: hashicorp/vault-action@v2.3.1
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
