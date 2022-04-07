@@ -26,7 +26,7 @@ jobs:
         uses: hashicorp/vault-action@v2.3.1
         with:
           url: https://vault-cluster.vault.11eb13c6-5c7e-9b94-9eb3-0242ac110018.aws.hashicorp.cloud:8200
-          role: github-actions-job
+          role: github-actions-job-test
           method: jwt
           #jwtGithubAudience: sigstore # set the GitHub token's aud claim
           secrets: |
