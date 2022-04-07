@@ -28,7 +28,7 @@ jobs:
           url: https://vault-cluster.vault.11eb13c6-5c7e-9b94-9eb3-0242ac110018.aws.hashicorp.cloud:8200
           role: github-actions-job
           method: jwt
-          #jwtGithubAudience: sigstore # set the GitHub token's aud claim
+          jwtGithubAudience: sigstore # set the GitHub token's aud claim
           secrets: |
                     kv/data/vault-action-demo     accessKey   | AWS_ACCESS_KEY_ID ;
                     kv/data/ci/vault-action-demo  secretKey   | AWS_SECRET_ACCESS_KEY ;
